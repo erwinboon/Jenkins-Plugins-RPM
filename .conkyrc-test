@@ -1,0 +1,14 @@
+out_to_console yes
+text_buffer_size 4096
+out_to_x no
+pad_percents 3
+lua_load ~/.conky/cpu.lua
+lua_load ~/.conky/mail.lua
+update_interval 1 
+TEXT
+cpu_stuff["cpu0_graph"]:add_value(${lua lua_cpu cpu0})--${updates}
+cpu_stuff["cpu1_graph"]:add_value(${lua lua_cpu cpu1})--${updates}
+cpu_stuff["cpu2_graph"]:add_value(${lua lua_cpu cpu2})--${updates}
+cpu_stuff["cpu3_graph"]:add_value(${lua lua_cpu cpu3})--${updates}
+cpu_stuff["cpu4_graph"]:add_value(${lua lua_cpu cpu4})--${updates}
+NEXT
