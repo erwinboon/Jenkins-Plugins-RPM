@@ -25,6 +25,12 @@ gpgcheck=0
 * Beware: if your plugin requires a higher version of Jenkins, the jenkins
   package will be updates
 
+## Rebuilding this repo
+
+To rebuild this project, you will need a Jenkins server with Docker and a
+`/var/www/repo` directory writable by Jenkins. Changes will be needed to the
+Jenkinsfile as well.
+
 ## How to switch to the Jenkins Plugins RPM ?
 
 1. Install the repository
