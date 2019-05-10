@@ -55,14 +55,14 @@ cat update-center.json | jq -r ".plugins[\"$plugin\"].dependencies|\"\(.[])\""|w
 echo "%description"
 echo "$excerpt"
 echo "%build"
-echo "mkdir -p \$RPM_BUILD_ROOT/var/lib/jenkins/plugins"
-echo "cp \$RPM_SOURCE_DIR/$filename \$RPM_BUILD_ROOT/var/lib/jenkins/plugins/$jpiname"
-echo "touch \$RPM_BUILD_ROOT/var/lib/jenkins/plugins/$hpiname"
-echo "touch \$RPM_BUILD_ROOT/var/lib/jenkins/plugins/${jpiname}.pinned"
+echo "mkdir -p \$RPM_BUILD_ROOT/opt/jenkins/plugins"
+echo "cp \$RPM_SOURCE_DIR/$filename \$RPM_BUILD_ROOT/opt/jenkins/plugins/$jpiname"
+echo "touch \$RPM_BUILD_ROOT/opt/jenkins/plugins/$hpiname"
+echo "touch \$RPM_BUILD_ROOT/opt/jenkins/plugins/${jpiname}.pinned"
 echo "%files"
-echo "%ghost /var/lib/jenkins/plugins/$hpiname"
-echo "%attr(644,jenkins,jenkins) /var/lib/jenkins/plugins/$jpiname"
-echo "%attr(444,jenkins,jenkins) /var/lib/jenkins/plugins/${jpiname}.pinned"
+echo "%ghost /opt/jenkins/plugins/$hpiname"
+echo "%attr(644,jenkins,jenkins) /opt/jenkins/plugins/$jpiname"
+echo "%attr(444,jenkins,jenkins) /opt/jenkins/plugins/${jpiname}.pinned"
 
 ) > jenkins-plugin-${plugin}.spec
 
